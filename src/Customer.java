@@ -7,4 +7,12 @@ public class Customer extends Person{
         super(name, socialSecurityNumber);
         Accounts = accounts;
     }
+
+    public List getAccounts() {
+        return Accounts;
+    }
+
+    public void setAccounts(List accounts) {
+        Accounts = accounts;
+    }
 }

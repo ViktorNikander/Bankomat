@@ -6,4 +6,20 @@ public abstract class Person {
         this.name = name;
         SocialSecurityNumber = socialSecurityNumber;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSocialSecurityNumber() {
+        return SocialSecurityNumber;
+    }
+
+    public void setSocialSecurityNumber(String socialSecurityNumber) {
+        SocialSecurityNumber = socialSecurityNumber;
+    }
 }
