@@ -1,18 +1,20 @@
+import java.util.List;
+
 public abstract class Account {
-    private int balance;
+    private double balance;
     private double interestRate;
     private Customer accountHolder;
     private Employee accountManager;
     private List<AccountHistory> accountHistoryList;
 
-    public Account(int balance, double interestRate, Customer accountHolder, Employee accountManager) {
+    public Account(double balance, double interestRate, Customer accountHolder, Employee accountManager) {
         this.balance = balance;
         this.interestRate = interestRate;
         this.accountHolder = accountHolder;
         this.accountManager = accountManager;
     }
 
-    public int getBalance() {
+    public double getBalance() {
         return balance;
     }
 
