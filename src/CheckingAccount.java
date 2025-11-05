@@ -5,7 +5,9 @@ public class CheckingAccount extends Account{
     }
 
     @Override
-    public void setBalance(int balance) {
-        super.setBalance(balance);
+    public void withdrawal(double withdrawalAmount) {
+        if (!(withdrawalAmount > getBalance())){
+            withdrawal(withdrawalAmount);
+        }
     }
 }
