@@ -18,17 +18,22 @@ public abstract class Account {
         balance -= withdrawalAmount;
     }
 
+    public String deniedWithdrawal(){
+        return "Withdrawal denied due to insufficient funds";
+    }
+
     public void deposit(double depositAmount){
-        balance += depositAmount;
+        if (depositAmount > 0){
+            balance += depositAmount;
+        } else {
+            System.out.println("Deposit must contain sufficient funds");
+        }
     }
 
     public double getBalance() {
         return balance;
     }
 
-    public String deniedWithdrawal(){
-        return "Withdrawal denied due to insufficient funds";
-    }
 
     public void setBalance(double transactionAmount) {
         this.balance = balance;
