@@ -6,8 +6,10 @@ public class CheckingAccount extends Account{
 
     @Override
     public void withdrawal(double withdrawalAmount) {
-        if (!(withdrawalAmount > getBalance())){
-            withdrawal(withdrawalAmount);
+        if (withdrawalAmount <= getBalance()){
+            super.withdrawal(withdrawalAmount);
+        } else {
+            System.out.println(deniedWithdrawal());
         }
     }
 }

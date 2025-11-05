@@ -26,6 +26,10 @@ public abstract class Account {
         return balance;
     }
 
+    public String deniedWithdrawal(){
+        return "Withdrawal denied due to insufficient funds";
+    }
+
     public void setBalance(double transactionAmount) {
         this.balance = balance;
     }
