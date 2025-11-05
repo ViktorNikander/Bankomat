@@ -26,7 +26,6 @@ public abstract class Account {
         if (depositAmount > 0){
             balance += depositAmount;
         } else {
-            System.out.println("Deposit must contain sufficient funds");
         }
     }
 
