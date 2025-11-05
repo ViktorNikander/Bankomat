@@ -3,9 +3,8 @@ import java.util.List;
 public class Customer extends Person{
     private List Accounts;
 
-    public Customer(String name, String socialSecurityNumber, List accounts) {
+    public Customer(String name, String socialSecurityNumber) {
         super(name, socialSecurityNumber);
-        Accounts = accounts;
     }
 
     public List getAccounts() {
@@ -14,5 +13,8 @@ public class Customer extends Person{
 
     public void setAccounts(List accounts) {
         Accounts = accounts;
+    }
+    public void addAccount(Account account){
+        Accounts.add(account);
     }
 }
