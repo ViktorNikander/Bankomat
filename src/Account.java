@@ -14,11 +14,19 @@ public abstract class Account {
         this.accountManager = accountManager;
     }
 
+    public void withdrawal(double withdrawalAmount){
+        balance -= withdrawalAmount;
+    }
+
+    public void deposit(double depositAmount){
+        balance += depositAmount;
+    }
+
     public double getBalance() {
         return balance;
     }
 
-    public void setBalance(int balance) {
+    public void setBalance(int transactionAmount) {
         this.balance = balance;
     }
 
