@@ -26,7 +26,7 @@ public abstract class Account {
         return balance;
     }
 
-    public void setBalance(int transactionAmount) {
+    public void setBalance(double transactionAmount) {
         this.balance = balance;
     }
 
