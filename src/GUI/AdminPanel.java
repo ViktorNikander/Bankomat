@@ -32,6 +32,10 @@ public class AdminPanel extends JPanel {
         buttonPanel.add(loginButton);
         buttonPanel.add(backButton);
 
+        loginButton.addActionListener(e -> {
+            //Todo compare if admin or employee exists
+        });
+
         backButton.addActionListener(e -> {
             JFrame frame = (JFrame) SwingUtilities.windowForComponent(this);
             frame.setContentPane(previousPanel);
