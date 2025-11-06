@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class CheckingAccountTest {
     Customer customerTest = new Customer("Test", "123");
     Employee employeeTest = new Employee("Test", "123", 35000, false);
-    CheckingAccount checkingAccountTest = new CheckingAccount(10000, 3, customerTest, employeeTest);
+    CheckingAccount checkingAccountTest = new CheckingAccount(10000, 10000,2, customerTest, employeeTest);
 
     @Test
     void withdrawal() {
