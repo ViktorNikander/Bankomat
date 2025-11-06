@@ -1,7 +1,7 @@
 public class CheckingAccount extends Account{
 
-    public CheckingAccount(double balance, double interestRate, Customer accountHolder, Employee accountManager) {
-        super(balance, interestRate, accountHolder, accountManager);
+    public CheckingAccount(int accountNumber,double balance, double interestRate, Customer accountHolder, Employee accountManager) {
+        super(accountNumber,balance, interestRate, accountHolder, accountManager);
     }
 
     @Override
