@@ -1,4 +1,11 @@
-public class Main {
+import GUI.CustormerOrAdminPanel;
+
+    public class Main {
+
+        Main(){
+            CustormerOrAdminPanel startPanel = new CustormerOrAdminPanel();
+        }
+
     public static void main(String[] args) {
         Customer customer1 = new Customer("Viktor", "123");
         Employee employee1 = new Employee("Viktor", "123", 1, true);
@@ -9,6 +16,6 @@ public class Main {
         CreditAccount creditAccountTest = new CreditAccount(10000, 3, customerTest, employeeTest, 10000);
         creditAccountTest.withdrawal(5000);
 
-//asda
+        Main main = new Main();
     }
 }

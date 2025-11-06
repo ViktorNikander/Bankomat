@@ -10,22 +10,28 @@ public class CustormerOrAdminPanel extends JFrame {
     JButton customerButton = new JButton("Customer");
     JButton adminButton = new JButton("Admin");
 
-    CustormerOrAdminPanel() {
+    public CustormerOrAdminPanel() {
         setTitle("Welcome");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(500,500);
+        setLocationRelativeTo(null);
+        setVisible(true);
         setLayout(new BorderLayout());
+        buttonPanel.setLayout(new GridLayout(1,2));
         add(welcomeLabel, BorderLayout.NORTH);
         add(buttonPanel, BorderLayout.CENTER);
         buttonPanel.add(customerButton);
         buttonPanel.add(adminButton);
 
         customerButton.addActionListener(e -> {
-//           setContentPane(customerPanel);
+           CustomerPanel customerPanel = new CustomerPanel();
+           setContentPane(customerPanel);
+           revalidate();
+           repaint();
         });
 
         adminButton.addActionListener(e -> {
-//           setContentPane(adminPanel);
+//           setContentPane(n);
         });
 
 
