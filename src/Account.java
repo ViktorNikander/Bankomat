@@ -14,6 +14,10 @@ public abstract class Account {
         this.accountManager = accountManager;
     }
 
+    public void interestYield(){
+        double interestFactor = interestRate * 0.01 + 1;
+        balance = balance * interestFactor;
+    }
     public void withdrawal(double withdrawalAmount){
         balance -= withdrawalAmount;
     }
