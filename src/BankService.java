@@ -1,4 +1,6 @@
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BankService {
     private String pathToOurSerialisedData = "resources/data.ser";
@@ -24,6 +26,32 @@ public class BankService {
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
+        return b;
+    }
+
+    public Bank restoreMockupData(){
+        Customer customer1 = new Customer("Viktor", "123");
+        Employee employee1 = new Employee("Viktor", "123", 1, true);
+        CreditAccount creditAccount1 = new CreditAccount(12313,10, 0, customer1, employee1, 10);
+        CheckingAccount checkingAccount1 = new CheckingAccount(345344,20, 0, customer1, employee1);
+        Customer customerTest = new Customer("Test", "123");
+        Employee employeeTest = new Employee("Test", "123", 35000, false);
+        CreditAccount creditAccountTest = new CreditAccount(756732,10000, 3, customerTest, employeeTest, 10000);
+        creditAccountTest.withdrawal(5000);
+
+        List<Account> accounts = new ArrayList<>();
+        accounts.add(creditAccount1);
+        accounts.add(checkingAccount1);
+        accounts.add(creditAccountTest);
+        List<Customer> customers = new ArrayList<>();
+        customers.add(customer1);
+        customers.add(customerTest);
+        List<Employee> employees = new ArrayList<>();
+        employees.add(employee1);
+        employees.add(employeeTest);
+
+        Bank b = new Bank("BankomatBanken",accounts,customers,employees);
+        this.serialize(b);
         return b;
     }
 }
