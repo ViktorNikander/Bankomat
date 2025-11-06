@@ -3,7 +3,7 @@ package GUI;
 import javax.swing.*;
 import java.awt.*;
 
-public class AdminPanel extends JPanel {
+public class AdminLoginPanel extends JPanel {
 
     JLabel adminPanelLabel =  new JLabel("Admin Panel");
 
@@ -16,7 +16,7 @@ public class AdminPanel extends JPanel {
     JButton backButton = new JButton("Back");
     JPanel previousPanel;
 
-    public AdminPanel(JPanel previousPanel) {
+    public AdminLoginPanel(JPanel previousPanel) {
     this.previousPanel = previousPanel;
         setLayout(new GridLayout(3,1));
         adminPanelLabel.setHorizontalAlignment(JLabel.CENTER);

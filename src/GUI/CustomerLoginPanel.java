@@ -3,7 +3,7 @@ package GUI;
 import javax.swing.*;
 import java.awt.*;
 
-public class CustomerPanel extends JPanel {
+public class CustomerLoginPanel extends JPanel {
 
     JLabel welcomeLabel = new  JLabel("Welcome to the bank, please login.");
 
@@ -14,9 +14,10 @@ public class CustomerPanel extends JPanel {
     JPanel buttonPanel = new JPanel();
     JButton loginButton = new JButton("Login");
     JButton backButton = new JButton("Back");
+    JPanel previousPanel;
 
-    CustomerPanel() {
-
+    CustomerLoginPanel(JPanel previousPanel) {
+        this.previousPanel = previousPanel;
         setLayout(new GridLayout(3,1));
 
         welcomeLabel.setHorizontalAlignment(JLabel.CENTER);
@@ -31,6 +32,20 @@ public class CustomerPanel extends JPanel {
         add(buttonPanel);
         buttonPanel.add(loginButton);
         buttonPanel.add(backButton);
+
+
+        loginButton.addActionListener(e -> {
+            //TODO check if customer exists and open panel if yes
+
+        });
+
+        backButton.addActionListener(e -> {
+           JFrame frame = (JFrame) SwingUtilities.windowForComponent(this);
+           frame.setContentPane(previousPanel);
+           frame.revalidate();
+           frame.repaint();
+
+        });
 
     }
 }

@@ -32,14 +32,14 @@ public class CustormerOrAdminPanel extends JFrame {
         buttonPanel.add(adminButton);
 
         customerButton.addActionListener(e -> {
-            CustomerPanel customerPanel = new CustomerPanel();
+            CustomerLoginPanel customerPanel = new CustomerLoginPanel(mainPanel);
             setContentPane(customerPanel);
             revalidate();
             repaint();
         });
 
         adminButton.addActionListener(e -> {
-            AdminPanel adminPanel = new AdminPanel(mainPanel);
+            AdminLoginPanel adminPanel = new AdminLoginPanel(mainPanel);
             setContentPane(adminPanel);
             revalidate();
             repaint();
