@@ -1,6 +1,9 @@
+import java.io.Serializable;
 import java.util.List;
 
-public class Customer extends Person{
+public class Customer extends Person implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     private List Accounts;
 
     public Customer(String name, String socialSecurityNumber) {

@@ -1,8 +1,8 @@
 public class CreditAccount extends Account {
     private double creditLimit;
 
-    public CreditAccount(double balance, double interestRate, Customer accountHolder, Employee accountManager, double creditLimit) {
-        super(balance, interestRate, accountHolder, accountManager);
+    public CreditAccount(int accountNumber,double balance, double interestRate, Customer accountHolder, Employee accountManager, double creditLimit) {
+        super(accountNumber, balance, interestRate, accountHolder, accountManager);
         this.creditLimit = -creditLimit;
     }
 

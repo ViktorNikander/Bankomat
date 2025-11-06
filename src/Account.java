@@ -1,13 +1,17 @@
+import java.io.Serializable;
 import java.util.List;
 
-public abstract class Account {
+public abstract class Account implements Serializable {
+    private static final long serialVersionUID = 1L;
+    private final int accountNumber;
     private double balance;
     private double interestRate;
     private Customer accountHolder;
     private Employee accountManager;
     private List<AccountHistory> accountHistoryList;
 
-    public Account(double balance, double interestRate, Customer accountHolder, Employee accountManager) {
+    public Account(int accountNumber,double balance, double interestRate, Customer accountHolder, Employee accountManager) {
+        this.accountNumber = accountNumber;
         this.balance = balance;
         this.interestRate = interestRate;
         this.accountHolder = accountHolder;
@@ -37,6 +41,9 @@ public abstract class Account {
         return balance;
     }
 
+    public int getAccountNumber() {
+        return accountNumber;
+    }
 
     public void setBalance(double transactionAmount) {
         this.balance = balance;
@@ -73,4 +80,6 @@ public abstract class Account {
     public void setAccountHistoryList(List<AccountHistory> accountHistoryList) {
         this.accountHistoryList = accountHistoryList;
     }
+
+
 }

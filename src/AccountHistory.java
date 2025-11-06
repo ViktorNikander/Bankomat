@@ -1,6 +1,8 @@
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
-public class AccountHistory {
+public class AccountHistory implements Serializable {
+    private static final long serialVersionUID = 1L;
     private LocalDateTime timestamp;
     private double balanceBefore;
     private double balanceAfter;
