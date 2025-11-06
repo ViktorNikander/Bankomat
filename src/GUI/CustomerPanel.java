@@ -13,6 +13,7 @@ public class CustomerPanel extends JPanel {
 
     CustomerPanel() {
         setLayout(new BorderLayout());
+        welcomeLabel.setHorizontalAlignment(JLabel.CENTER);
         add(welcomeLabel, BorderLayout.NORTH);
         add(personalNumberPanel, BorderLayout.CENTER);
         personalNumberPanel.add(personalNumberLabel);
