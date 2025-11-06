@@ -22,9 +22,11 @@ public class Bank implements Serializable {
     public List<Account> getAccounts() {
         return accounts;
     }
+
     public List<Customer> getCustomers() {
         return customers;
     }
+
     public List<Employee> getEmployees() {
         return employees;
     }
@@ -42,5 +44,33 @@ public class Bank implements Serializable {
                     account.getInterestRate());
         }
         System.out.println("+------------+----------------------+-----------------+------------+--------+");
+    }
+
+    public void printCustomers() {
+        System.out.println("+----------------------+------------------------+");
+        System.out.println("| Name                 | Social Security Number |");
+        System.out.println("+----------------------+------------------------+");
+        for (Customer customer : customers) {
+            System.out.printf("| %-20s | %-22s |%n", customer.getName(), customer.getSocialSecurityNumber());
+        }
+        System.out.println("+----------------------+------------------------+");
+
+
+    }
+
+    public void printEmployees() {
+        System.out.println("+----------------------+------------------------+------------+---------------+");
+        System.out.println("| Name                 | Social Security Number | Salary     | Administrator |");
+        System.out.println("+----------------------+------------------------+------------+---------------+");
+        for (Employee employee : employees) {
+            System.out.printf(
+                    "| %-20s | %-22s | %10d | %-13s |%n",
+                    employee.getName(),
+                    employee.getSocialSecurityNumber(),
+                    employee.getSalary(),
+                    employee.isAdministrator() ? "Yes" : "No"
+            );
+        }
+        System.out.println("+----------------------+------------------------+------------+---------------+");
     }
 }
