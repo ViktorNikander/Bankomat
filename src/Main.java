@@ -13,7 +13,7 @@ public class Main {
         List<Customer> customers = bank.getCustomers();
         List<Employee> employees = bank.getEmployees();
 
-
+        bank.printAccounts();
 
 
         CustormerOrAdminPanel startPanel = new CustormerOrAdminPanel();

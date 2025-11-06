@@ -38,6 +38,7 @@ public class Bank implements Serializable {
                     account.getAccountNumber(),
                     account.getAccountHolder().getName(),
                     account.getAccountManager().getName(),
+                    account.getBalance(),
                     account.getInterestRate());
         }
         System.out.println("+------------+----------------------+-----------------+------------+--------+");
