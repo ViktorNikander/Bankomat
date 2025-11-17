@@ -1,6 +1,10 @@
+import Accounts.CheckingAccount;
+import Accounts.CreditAccount;
 import GUI.CustormerOrAdminPanel;
+import Person.Customer;
+import Person.Employee;
 
-    public class Main {
+public class Main {
 
         Main(){
             CustormerOrAdminPanel startPanel = new CustormerOrAdminPanel();

@@ -1,3 +1,8 @@
+package Accounts;
+
+import Person.Customer;
+import Person.Employee;
+
 public class CreditAccount extends Account {
     private double creditLimit;
 

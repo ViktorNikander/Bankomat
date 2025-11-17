@@ -1,4 +1,7 @@
+package Person;
+
 import java.util.List;
+import Accounts.*;
 
 public class Customer extends Person{
     private List Accounts;

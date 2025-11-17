@@ -1,5 +1,7 @@
 package GUI;
 
+import Person.Employee;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -8,13 +10,14 @@ public class AdminLoginPanel extends JPanel {
     JLabel adminPanelLabel =  new JLabel("Admin Panel");
 
     JPanel loginCredentialsPanel = new JPanel();
-    JLabel employeeIdLabel = new JLabel("Employee ID: ");
+    JLabel employeeIdLabel = new JLabel("Person.Employee ID: ");
     JTextField employeeIDTextField = new JTextField(12);
 
     JPanel buttonPanel = new JPanel();
     JButton loginButton = new JButton("Login");
     JButton backButton = new JButton("Back");
     JPanel previousPanel;
+    Employee loggedInEmployee;
 
     public AdminLoginPanel(JPanel previousPanel) {
     this.previousPanel = previousPanel;
@@ -33,10 +36,10 @@ public class AdminLoginPanel extends JPanel {
         buttonPanel.add(backButton);
 
         loginButton.addActionListener(e -> {
-            String inputEmployeeID = employeeIDTextField.getText();
+            loggedInEmployee = loggedInEmployee.findEmployeeBasedOnSocialSecurityNumber(employeeIDTextField.getText());
             //for test purposes
             if(inputEmployeeID.equals("admin")){
-                new AdminPanel(this);
+                new AdminPanel(this,loggedInEmployee);
             }
         });
 
