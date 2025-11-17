@@ -1,3 +1,8 @@
+package Accounts;
+
+import Person.Customer;
+import Person.Employee;
+
 public class CheckingAccount extends Account{
 
     public CheckingAccount(double balance, double interestRate, Customer accountHolder, Employee accountManager) {
