@@ -9,7 +9,7 @@ public class CustormerOrAdminPanel extends JFrame {
     JPanel adminPanel = new JPanel();
     JLabel welcomeLabel = new JLabel("Welcome to the bank");
     JPanel buttonPanel = new JPanel();
-    JButton customerButton = new JButton("Person.Customer");
+    JButton customerButton = new JButton("Customer");
     JButton adminButton = new JButton("Admin");
 
     public CustormerOrAdminPanel() {

@@ -4,13 +4,13 @@ import Person.Employee;
 
 import javax.swing.*;
 import java.awt.*;
+import java.lang.*;
 
 public class AdminLoginPanel extends JPanel {
 
     JLabel adminPanelLabel =  new JLabel("Admin Panel");
-
     JPanel loginCredentialsPanel = new JPanel();
-    JLabel employeeIdLabel = new JLabel("Person.Employee ID: ");
+    JLabel employeeIdLabel = new JLabel("Employee ID: ");
     JTextField employeeIDTextField = new JTextField(12);
 
     JPanel buttonPanel = new JPanel();
@@ -36,10 +36,18 @@ public class AdminLoginPanel extends JPanel {
         buttonPanel.add(backButton);
 
         loginButton.addActionListener(e -> {
-            loggedInEmployee = loggedInEmployee.findEmployeeBasedOnSocialSecurityNumber(employeeIDTextField.getText());
+            String inputEmployeeID = employeeIDTextField.getText();
+            IO.println("inputEmployeeID: " + inputEmployeeID);
+            loggedInEmployee = Employee.findEmployeeBasedOnSocialSecurityNumber(inputEmployeeID);
             //for test purposes
-            if(inputEmployeeID.equals("admin")){
-                new AdminPanel(this,loggedInEmployee);
+            if(loggedInEmployee != null) {
+                AdminPanel adminPanel = new AdminPanel(this,loggedInEmployee);
+                JFrame frame = (JFrame) SwingUtilities.windowForComponent(this);
+                frame.setContentPane(adminPanel);
+                frame.revalidate();
+                frame.repaint();
+            } else{
+                JOptionPane.showMessageDialog(this,"Invalid Employee ID, try again");
             }
         });
 

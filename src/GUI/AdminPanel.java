@@ -9,11 +9,12 @@ public class AdminPanel extends JPanel {
 
 
     Employee loggedInEmployee;
-    JLabel welcomeLabel = new JLabel("Welcome " + loggedInEmployee.getName());
+    JLabel welcomeLabel = new JLabel("Welcome ");
 
     AdminPanel(JPanel previousPanel, Employee loggedInEmployee) {
         this.loggedInEmployee = loggedInEmployee;
 
+        welcomeLabel.setText("Welcome " + loggedInEmployee.getName());
         add(welcomeLabel);
         setVisible(true);
 

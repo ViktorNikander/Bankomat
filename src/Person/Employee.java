@@ -12,9 +12,10 @@ public class Employee extends Person{
         this.salary = salary;
         this.administrator = administrator;
         employees.add(this);
+        IO.println("Employee"+ this.getName() + " added to list");
     }
 
-    public Employee findEmployeeBasedOnSocialSecurityNumber(String socialSecurityNumber){
+    public static Employee findEmployeeBasedOnSocialSecurityNumber(String socialSecurityNumber){
         for(Employee e: employees){
             if(e.getSocialSecurityNumber().equals(socialSecurityNumber)){
                 return e;
