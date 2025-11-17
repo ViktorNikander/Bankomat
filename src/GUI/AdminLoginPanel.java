@@ -33,7 +33,11 @@ public class AdminLoginPanel extends JPanel {
         buttonPanel.add(backButton);
 
         loginButton.addActionListener(e -> {
-            //Todo compare if admin or employee exists
+            String inputEmployeeID = employeeIDTextField.getText();
+            //for test purposes
+            if(inputEmployeeID.equals("admin")){
+                new AdminPanel(this);
+            }
         });
 
         backButton.addActionListener(e -> {
